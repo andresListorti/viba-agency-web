@@ -7,6 +7,8 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import { SITE } from "@/lib/content";
+import { SITE_URL } from "@/lib/site-url";
+import { DEFAULT_DESCRIPTION, DEFAULT_TITLE, jsonLdString, organizationJsonLd, shareMetadata } from "@/lib/seo";
 
 const aileron = localFont({
   src: [
@@ -25,39 +27,41 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE.url),
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: "VIBA Agency · Marketing estratégico a medida",
+    default: DEFAULT_TITLE,
     template: "%s · VIBA Agency",
   },
-  description:
-    "Hacemos marketing, pero con método. Agencia con +10 años de trayectoria: equipos interdisciplinarios, estrategia data driven, creatividad y performance a medida de cada marca.",
-  keywords: ["agencia de marketing", "marketing digital", "social media", "performance", "branding", "Argentina", "VIBA"],
-  openGraph: {
-    type: "website",
-    locale: "es_AR",
-    siteName: SITE.name,
+  description: DEFAULT_DESCRIPTION,
+  applicationName: SITE.name,
+  authors: [{ name: SITE.name, url: SITE_URL }],
+  creator: SITE.name,
+  publisher: SITE.name,
+  category: "marketing",
+  keywords: [
+    "agencia de marketing",
+    "agencia de marketing digital",
+    "marketing digital Argentina",
+    "social media",
+    "community management",
+    "performance",
+    "paid media",
+    "branding",
+    "estrategia digital",
+    "VIBA Agency",
+  ],
+  formatDetection: { telephone: false, email: false, address: false },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 },
   },
-  twitter: { card: "summary_large_image" },
-  alternates: { canonical: "/" },
+  ...shareMetadata({ title: DEFAULT_TITLE, description: DEFAULT_DESCRIPTION, path: "/" }),
 };
 
 export const viewport: Viewport = {
   themeColor: "#050505",
   colorScheme: "dark",
-};
-
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "MarketingAgency",
-  name: SITE.name,
-  url: SITE.url,
-  email: SITE.email,
-  telephone: SITE.phone,
-  slogan: SITE.motto,
-  areaServed: "Worldwide",
-  address: { "@type": "PostalAddress", addressCountry: "AR" },
-  sameAs: [SITE.linkedin, SITE.instagram],
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -76,7 +80,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <Footer />
         <WhatsAppFloat />
         <div className="grain" aria-hidden="true" />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdString(organizationJsonLd) }} />
       </body>
     </html>
   );

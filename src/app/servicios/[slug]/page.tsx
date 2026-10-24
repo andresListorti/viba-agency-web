@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { PILLARS, SERVICES, pillarName, waLink } from "@/lib/content";
 import Reveal from "@/components/Reveal";
+import { jsonLdString, serviceJsonLd, shareMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
   return SERVICES.map((s) => ({ slug: s.slug }));
@@ -15,8 +16,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!s) return {};
   return {
     title: s.name,
-    description: s.short,
-    alternates: { canonical: `/servicios/${s.slug}` },
+    description: s.long,
+    ...shareMetadata({
+      title: `${s.name} · VIBA Agency`,
+      description: s.long,
+      path: `/servicios/${s.slug}`,
+      imageName: s.slug,
+      imageAlt: `${s.name}, servicio de VIBA Agency`,
+    }),
   };
 }
 
@@ -32,6 +39,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
 
   return (
     <article className="pt-32 md:pt-40">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdString(serviceJsonLd(s.slug)) }} />
       <div className="wrap">
         <nav aria-label="Ruta" className="mb-10 flex gap-2 text-sm text-smoke">
           <Link href="/#servicios" className="ulink hover:text-bone">Servicios</Link>

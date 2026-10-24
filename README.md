@@ -27,7 +27,9 @@ Todo el sitio es monocromo, con el negro y el blanco hueso de la marca. El color
 - **API de contacto** (`/api/contact`): valida con Zod, filtra spam con honeypot y reenvía al Formspree que la agencia ya usa. No hace falta base de datos.
 - **Menú mobile** a pantalla completa y accesible (focus, Escape, scroll lock). En el sitio anterior el menú no funcionaba.
 - **Sin carrusel ni ticker infinitos.**
-- SEO: metadata, Open Graph, `sitemap.xml`, `robots.txt` y JSON-LD `MarketingAgency`.
+- **SEO**: título y descripción por página, URL canónica, `sitemap.xml`, `robots.txt`, manifest e íconos, y datos estructurados (`MarketingAgency`, `WebSite`, `Service` y `BreadcrumbList`).
+- **Vista previa al compartir** (WhatsApp, LinkedIn, X, etc.): una imagen JPG liviana para la home y otra para cada servicio, en `public/og/`.
+- **Seguridad**: Content-Security-Policy, HSTS, protección contra iframes (clickjacking), `nosniff`, Referrer-Policy y Permissions-Policy. La API de contacto valida el origen, el tamaño y el formato de cada pedido y limita la cantidad de envíos por persona.
 - Accesibilidad: `prefers-reduced-motion` respetado, foco visible, skip link, labels y estados ARIA.
 
 ## Desarrollo
@@ -43,6 +45,17 @@ npm run build && npm start
 | Variable | Default | Uso |
 |---|---|---|
 | `FORMSPREE_ENDPOINT` | `https://formspree.io/f/xwvrqbek` | Destino de los mensajes del formulario |
+| `NEXT_PUBLIC_SITE_URL` | dominio de producción de Vercel | Dominio público (canonical, Open Graph, sitemap) |
+
+Si no se define `NEXT_PUBLIC_SITE_URL`, se usa automáticamente el dominio de producción de Vercel. Cuando se conecte `vibaagency.com` al proyecto, las URLs pasan a usarlo sin tocar código.
+
+### Imágenes para compartir e íconos
+
+```bash
+python scripts/generate-og.py   # requiere Pillow
+```
+
+Regenera `public/og/*.jpg`, `public/icons/*` y los íconos de `src/app/` a partir de las fotos de `public/img` y los servicios de `src/lib/content.ts`.
 
 ## Editar contenido
 
