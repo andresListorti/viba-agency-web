@@ -52,8 +52,8 @@ export default function Method() {
           {PILLARS.map((p, i) => (
             <li key={p.id} className="step relative">
               <span className="absolute -left-8 top-1 size-2 -translate-x-1/2 rounded-full bg-bone md:-top-14 md:left-0 md:-translate-y-1/2 md:translate-x-0" aria-hidden="true" />
-              <span className="display block text-[clamp(4rem,8vw,7.5rem)] text-smoke/40">0{i + 1}</span>
-              <h3 className="display mt-4 text-[clamp(1.8rem,2.6vw,2.5rem)] font-bold tracking-[-0.03em]">{p.name}</h3>
+              <span className="display block text-[clamp(2.8rem,8vw,7.5rem)] text-smoke/40">0{i + 1}</span>
+              <h3 className="display mt-4 text-[clamp(1.45rem,2.6vw,2.5rem)] font-bold tracking-[-0.03em]">{p.name}</h3>
               <p className="mt-4 max-w-[34ch] leading-relaxed text-smoke">{p.text}</p>
             </li>
           ))}

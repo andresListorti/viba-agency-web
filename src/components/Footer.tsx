@@ -30,7 +30,7 @@ export default function Footer() {
     <footer className="relative overflow-hidden border-t border-line pt-16">
       <div className="wrap flex flex-col gap-10 md:flex-row md:items-end md:justify-between">
         <div className="max-w-sm">
-          <p className="display text-3xl md:text-4xl">{SITE.motto}</p>
+          <p className="display text-2xl md:text-4xl">{SITE.motto}</p>
           <p className="mt-3 text-sm text-smoke">{SITE.location}</p>
         </div>
         <div className="grid grid-cols-2 gap-x-14 gap-y-2 text-sm">

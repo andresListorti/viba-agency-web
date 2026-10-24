@@ -68,7 +68,7 @@ html.lenis body { height: auto; }
   font-weight: 900;
   letter-spacing: -0.04em;
   line-height: 0.92;
-  font-size: clamp(2.6rem, 7vw, 6.5rem);
+  font-size: clamp(2.1rem, 7vw, 6.5rem);
 }
 
 /* "we feel what we do": photos are monochrome until they're felt */
@@ -204,24 +204,6 @@ html.lenis body { height: auto; }
 .field[data-invalid="true"] textarea { border-color: #ff8a80; }
 
 }
-
-/* Custom cursor */
-.cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 100;
-  width: 10px;
-  height: 10px;
-  margin: -5px 0 0 -5px;
-  border-radius: 999px;
-  background: var(--color-bone);
-  pointer-events: none;
-  mix-blend-mode: difference;
-  transition: width 0.35s var(--ease-out-expo), height 0.35s var(--ease-out-expo), margin 0.35s var(--ease-out-expo);
-}
-.cursor.is-hover { width: 56px; height: 56px; margin: -28px 0 0 -28px; }
-@media (pointer: coarse) { .cursor { display: none; } }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

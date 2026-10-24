@@ -40,10 +40,10 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         </nav>
 
         <Reveal>
-          <h1 className="display max-w-[14ch] text-[clamp(3rem,9vw,8.5rem)]">{s.name}</h1>
+          <h1 className="display max-w-[14ch] text-[clamp(2.3rem,9vw,8.5rem)]">{s.name}</h1>
         </Reveal>
         <Reveal delay={0.1}>
-          <p className="mt-8 max-w-[44ch] text-xl leading-relaxed text-smoke md:text-2xl">{s.short}</p>
+          <p className="mt-8 max-w-[48ch] text-lg leading-relaxed text-smoke md:text-2xl">{s.long}</p>
         </Reveal>
       </div>
 
@@ -53,24 +53,14 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         </figure>
       </Reveal>
 
-      <div className="wrap grid gap-16 py-24 md:grid-cols-12 md:py-32">
-        <div className="md:col-span-6">
-          <p className="text-2xl leading-snug md:text-3xl">{s.long}</p>
+      <div className="wrap grid gap-8 py-24 md:grid-cols-12 md:py-32">
+        <div className="md:col-span-5">
+          <h2 className="text-sm text-smoke">Pilar</h2>
+          <p className="display mt-3 text-[clamp(1.8rem,3.5vw,3rem)] font-bold tracking-[-0.03em]">{pillar.name}</p>
         </div>
-        <div className="md:col-span-5 md:col-start-8">
-          <h2 className="mb-6 text-sm text-smoke">Qué incluye</h2>
-          <ul className="border-t border-line">
-            {s.includes.map((item) => (
-              <li key={item} className="flex items-center justify-between gap-4 border-b border-line py-5 text-lg">
-                {item}
-                <span className="size-1.5 rounded-full bg-bone" aria-hidden="true" />
-              </li>
-            ))}
-          </ul>
-          <p className="mt-10 text-sm leading-relaxed text-smoke">
-            Parte del pilar <span className="text-bone">{pillar.name}</span>. {pillar.text}
-          </p>
-        </div>
+        <p className="max-w-[46ch] text-lg leading-relaxed text-smoke md:col-span-6 md:col-start-7 md:pt-8 md:text-xl">
+          {pillar.text}
+        </p>
       </div>
 
       {related.length > 0 && (
@@ -89,7 +79,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       <div className="border-t border-line bg-graphite">
         <div className="wrap grid gap-10 py-20 md:grid-cols-2 md:items-center md:py-28">
           <div>
-            <h2 className="display text-[clamp(2.4rem,5vw,4.5rem)]">¿Lo vemos para tu marca?</h2>
+            <h2 className="display text-[clamp(1.9rem,5vw,4.5rem)]">¿Lo vemos para tu marca?</h2>
             <div className="mt-8 flex flex-wrap gap-3">
               <a href={waLink(`Hola VIBA! Me interesa ${s.name}.`)} target="_blank" rel="noopener" className="btn btn-light">
                 Consultar por WhatsApp

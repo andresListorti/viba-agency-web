@@ -121,7 +121,7 @@ export default function Nav() {
                     <Link
                       href={l.href}
                       onClick={() => setOpen(false)}
-                      className="display flex items-baseline gap-4 py-1 text-[clamp(2.8rem,13vw,5rem)]"
+                      className="display flex items-baseline gap-4 py-1.5 text-[clamp(1.9rem,8.5vw,3rem)]"
                     >
                       <span className="font-sans text-xs font-medium tracking-normal text-smoke">0{i + 1}</span>
                       {l.label}

@@ -58,7 +58,7 @@ export default function Diagnostic() {
               exit={{ opacity: 0, x: dir * -60 }}
               transition={{ duration: 0.55, ease }}
             >
-              <h1 className="display max-w-[16ch] text-[clamp(2.6rem,6.5vw,6rem)]">{q.title}</h1>
+              <h1 className="display max-w-[16ch] text-[clamp(2rem,6.5vw,6rem)]">{q.title}</h1>
               <p className="mt-5 text-smoke">{q.help}</p>
 
               <div className="mt-12 grid gap-3 sm:grid-cols-2">
@@ -77,7 +77,7 @@ export default function Diagnostic() {
                       }`}
                     >
                       <span>
-                        <span className="display block text-2xl font-bold tracking-[-0.03em] md:text-3xl">{o.label}</span>
+                        <span className="display block text-xl font-bold tracking-[-0.03em] md:text-3xl">{o.label}</span>
                         {o.hint && <span className={`mt-1 block text-sm ${on ? "text-ink/60" : "text-smoke"}`}>{o.hint}</span>}
                       </span>
                       <span className={`grid size-7 shrink-0 place-items-center rounded-full border ${on ? "border-ink bg-ink text-bone" : "border-line"}`} aria-hidden="true">
@@ -103,10 +103,9 @@ export default function Diagnostic() {
             </motion.div>
           ) : (
             <motion.div key="result" initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease }}>
-              <h1 className="display max-w-[14ch] text-[clamp(2.8rem,7vw,6.5rem)]">Esto es lo que activaríamos primero.</h1>
-              <p className="mt-6 max-w-[52ch] text-lg leading-relaxed text-smoke">
-                Una primera lectura según tus respuestas. En una charla de 30 minutos lo bajamos a un plan concreto para tu
-                negocio, sin compromiso.
+              <h1 className="display max-w-[14ch] text-[clamp(2.1rem,7vw,6.5rem)]">Esto es lo que activaríamos primero.</h1>
+              <p className="mt-6 max-w-[52ch] text-base leading-relaxed md:text-lg text-smoke">
+                Una primera lectura según tus respuestas. Escribinos y lo conversamos en función de tu negocio.
               </p>
 
               <ol className="mt-14 grid gap-4 md:grid-cols-2">
@@ -124,7 +123,7 @@ export default function Diagnostic() {
                       <div className="flex flex-col justify-between py-1">
                         <div>
                           <p className="text-xs text-smoke">{i === 0 ? "Prioridad" : pillarName(s.pillar)}</p>
-                          <h2 className="display mt-1 text-2xl font-bold tracking-[-0.03em]">{s.name}</h2>
+                          <h2 className="display mt-1 text-xl font-bold md:text-2xl tracking-[-0.03em]">{s.name}</h2>
                           <p className="mt-2 line-clamp-2 text-sm text-smoke">{s.short}</p>
                         </div>
                         <span className="ulink mt-3 w-fit text-sm">Ver el servicio</span>

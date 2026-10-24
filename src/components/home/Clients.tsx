@@ -56,7 +56,7 @@ export default function Clients() {
         <div className="mb-16 grid gap-6 md:grid-cols-12 md:items-end">
           <h2 className="h2 md:col-span-7">Confían en nosotros.</h2>
           <p className="max-w-[42ch] leading-relaxed text-smoke md:col-span-5">
-            Marcas que eligieron un modelo distinto: gastronomía, moda, cosmética, salud, retail y diseño.
+            Marcas que eligieron un modelo distinto. Los resultados hablan por sí solos.
           </p>
         </div>
 
@@ -64,7 +64,7 @@ export default function Clients() {
           {STATS.map((s) => (
             <div key={s.label} className="flex flex-col-reverse gap-2 border-l border-line pl-5">
               <dt className="text-sm text-smoke">{s.label}</dt>
-              <dd className="display text-[clamp(3.4rem,7vw,6.5rem)] tabular-nums">
+              <dd className="display text-[clamp(2.4rem,7vw,6.5rem)] tabular-nums">
                 <span data-count={s.value}>{s.value}</span>
                 {s.suffix && <span className="text-smoke">{s.suffix}</span>}
               </dd>

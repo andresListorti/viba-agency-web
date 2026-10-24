@@ -7,11 +7,11 @@ export default function Contact() {
     <section id="contacto" className="border-t border-line bg-graphite py-28 md:py-40">
       <div className="wrap grid gap-16 lg:grid-cols-12">
         <div className="lg:col-span-6">
-          <h2 className="display text-[clamp(4rem,12vw,10rem)]">
+          <h2 className="display text-[clamp(3rem,12vw,10rem)]">
             Hablemos<span className="text-smoke">.</span>
           </h2>
-          <p className="mt-6 max-w-[38ch] text-lg leading-relaxed text-smoke">
-            Contanos qué está pasando con tu marca. Te respondemos en menos de 24 horas hábiles.
+          <p className="mt-6 max-w-[38ch] text-base md:text-lg leading-relaxed text-smoke">
+            Contanos qué está pasando con tu marca y lo pensamos juntos.
           </p>
 
           <a

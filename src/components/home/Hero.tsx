@@ -102,7 +102,7 @@ export default function Hero() {
       </div>
 
       <div className="wrap relative grid flex-1 grid-cols-1 items-center gap-y-10 py-10 lg:grid-cols-12 lg:py-6">
-        <h1 className="hero-title display relative z-10 text-[clamp(3.4rem,min(16vw,15svh),11rem)] lg:col-span-8 lg:whitespace-nowrap">
+        <h1 className="hero-title display relative z-10 text-[clamp(2.6rem,min(13vw,15svh),11rem)] lg:col-span-8 lg:whitespace-nowrap">
           <span className="hero-line line-mask"><span>No es</span></span>
           <span className="hero-line line-mask">
             <span className="relative w-fit">
@@ -133,7 +133,7 @@ export default function Hero() {
       </div>
 
       <div className="wrap relative z-10 grid grid-cols-1 gap-8 border-t border-line pb-8 pt-7 md:grid-cols-12 md:items-end">
-        <p className="hero-fade max-w-[46ch] text-[0.98rem] leading-relaxed text-smoke md:col-span-5">
+        <p className="hero-fade max-w-[46ch] text-[0.95rem] leading-relaxed text-smoke md:col-span-5">
           Somos partners estratégicos de las marcas con las que trabajamos. Diseñamos marketing a medida que combina
           análisis, creatividad y performance, sin fórmulas estándar.
         </p>

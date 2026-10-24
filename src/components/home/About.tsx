@@ -69,7 +69,7 @@ export default function About() {
     <section ref={root} id="nosotros" className="relative py-28 md:py-44">
       <div className="wrap">
         <p className="mb-10 text-sm text-smoke">Nosotros, con +10 años de trayectoria</p>
-        <p className="statement display max-w-[22ch] text-[clamp(2rem,4.8vw,4.6rem)] !leading-[1.02] tracking-[-0.035em]">
+        <p className="statement display max-w-[22ch] text-[clamp(1.55rem,4.8vw,4.6rem)] !leading-[1.02] tracking-[-0.035em]">
           {STATEMENT.split(" ").map((w, i) => (
             <span key={i} className="word inline-block">
               {w}&nbsp;
@@ -90,21 +90,21 @@ export default function About() {
 
           <div className="flex flex-col gap-10 lg:col-span-5 lg:pl-6">
             <div className="box-type relative w-fit" aria-label="think outside the box.">
-              <p className="display text-[clamp(2.4rem,5vw,4.2rem)] leading-[0.95]" aria-hidden="true">
+              <p className="display text-[clamp(1.9rem,5vw,4.2rem)] leading-[0.95]" aria-hidden="true">
                 think outside
                 <br />
                 the
               </p>
               <div className="mt-2 flex items-center gap-3" aria-hidden="true">
-                <svg className="box-frame h-[clamp(3rem,6vw,4.8rem)] w-[clamp(3rem,6vw,4.8rem)] shrink-0" viewBox="0 0 100 100" fill="none">
+                <svg className="box-frame h-[clamp(2.4rem,6vw,4.8rem)] w-[clamp(2.4rem,6vw,4.8rem)] shrink-0" viewBox="0 0 100 100" fill="none">
                   <rect x="2" y="2" width="96" height="96" stroke="currentColor" strokeWidth="3" pathLength={1} strokeDasharray="1" />
                 </svg>
-                <span className="box-word display inline-block text-[clamp(2.4rem,5vw,4.2rem)] leading-none">box.</span>
+                <span className="box-word display inline-block text-[clamp(1.9rem,5vw,4.2rem)] leading-none">box.</span>
               </div>
             </div>
             <p className="max-w-[44ch] leading-relaxed text-smoke">
-              Evitamos las fórmulas estandarizadas. Cada solución se construye a medida y bajo una mirada{" "}
-              <span className="text-bone">data driven</span>: qué funciona, para quién y por qué.
+              Evitamos las fórmulas estandarizadas: cada solución se construye a medida y bajo una mirada{" "}
+              <span className="text-bone">data driven</span>.
             </p>
           </div>
         </div>

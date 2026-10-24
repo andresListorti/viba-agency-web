@@ -68,7 +68,7 @@ export default function ContactForm({ defaultMessage = "" }: { defaultMessage?: 
               <motion.path d="M16 27l7 7 14-15" fill="none" stroke="currentColor" strokeWidth="2" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.5, delay: 0.6 }} />
             </svg>
             <p className="display text-4xl">Mensaje enviado.</p>
-            <p className="max-w-[40ch] text-smoke">Gracias. Te respondemos en menos de 24 horas hábiles.</p>
+            <p className="max-w-[40ch] text-smoke">Gracias por escribirnos. Te vamos a contactar.</p>
             <button onClick={() => setStatus("idle")} className="ulink w-fit text-sm text-smoke hover:text-bone">
               Enviar otro mensaje
             </button>

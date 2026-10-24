@@ -13,7 +13,7 @@ export default function DiagnosticTeaser() {
           <div className="relative grid gap-10 transition-colors duration-700 group-hover:text-ink md:grid-cols-12 md:items-end">
             <div className="md:col-span-8">
               <p className="text-sm opacity-60">{QUESTIONS.length} preguntas, menos de un minuto</p>
-              <h2 className="display mt-4 text-[clamp(2.4rem,6vw,5.5rem)]">¿Qué necesita tu marca hoy?</h2>
+              <h2 className="display mt-4 text-[clamp(1.9rem,6vw,5.5rem)]">¿Qué necesita tu marca hoy?</h2>
             </div>
             <div className="flex items-center gap-4 md:col-span-4 md:justify-end">
               <span className="text-lg font-semibold">Hacé el diagnóstico</span>

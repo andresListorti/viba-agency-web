@@ -112,7 +112,7 @@ export default function Services() {
                     aria-controls={`svc-${s.slug}`}
                     className={`group flex w-full items-center gap-4 py-5 text-left transition-opacity duration-500 md:py-7 ${dim ? "md:opacity-30" : ""}`}
                   >
-                    <span className="display flex-1 text-[clamp(1.7rem,4.2vw,3.6rem)] font-bold tracking-[-0.035em] transition-transform duration-700 ease-[cubic-bezier(.16,1,.3,1)] md:group-hover:translate-x-4">
+                    <span className="display flex-1 text-[clamp(1.3rem,4.2vw,3.6rem)] font-bold tracking-[-0.035em] transition-transform duration-700 ease-[cubic-bezier(.16,1,.3,1)] md:group-hover:translate-x-4">
                       {s.name}
                     </span>
                     <span className="hidden text-sm text-smoke sm:block">{pillarName(s.pillar)}</span>
@@ -141,7 +141,7 @@ export default function Services() {
                           <div className="relative aspect-[16/10] overflow-hidden rounded-md md:hidden">
                             <Image src={`/img/${s.img}.webp`} alt="" fill sizes="100vw" className="object-cover" />
                           </div>
-                          <p className="max-w-[52ch] text-lg leading-relaxed text-smoke md:col-span-6 md:col-start-1">{s.short}</p>
+                          <p className="max-w-[52ch] text-base leading-relaxed text-smoke md:col-span-6 md:col-start-1 md:text-lg">{s.long}</p>
                           <div className="md:col-span-6 md:flex md:justify-end">
                             <Link href={`/servicios/${s.slug}`} className="btn btn-ghost">
                               Ver el servicio

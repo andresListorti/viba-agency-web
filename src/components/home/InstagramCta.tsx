@@ -13,7 +13,7 @@ export default function InstagramCta() {
             className="group mt-4 block w-fit"
             aria-label="Seguinos en Instagram, @viba.agencia"
           >
-            <span className="display relative block text-[clamp(2.6rem,9vw,8.5rem)] lowercase">
+            <span className="display relative block text-[clamp(1.9rem,9vw,8.5rem)] lowercase">
               @viba.agencia
               <span className="absolute -bottom-1 left-0 h-[0.06em] w-full origin-left scale-x-0 bg-bone transition-transform duration-700 ease-[cubic-bezier(.16,1,.3,1)] group-hover:scale-x-100" aria-hidden="true" />
             </span>
@@ -21,7 +21,7 @@ export default function InstagramCta() {
         </div>
         <div className="flex flex-col gap-4 md:col-span-4 md:items-end">
           <p className="max-w-[32ch] text-smoke md:text-right">
-            Casos, procesos e ideas de marketing con método. Lo que hacemos, contado todos los días.
+            Lo que hacemos y cómo lo hacemos, también en Instagram.
           </p>
           <a href={SITE.instagram} target="_blank" rel="noopener" className="btn btn-ghost">
             <svg viewBox="0 0 24 24" className="size-4" aria-hidden="true">
