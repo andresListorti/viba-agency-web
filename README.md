@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# VIBA Agency — sitio web
 
-## Getting Started
+Rediseño completo de [vibaagency.com](https://vibaagency.com) para **VIBA Agency**, agencia de marketing con base en Argentina.
 
-First, run the development server:
+> *No es instinto. Es método.* — we feel what we do
+
+## Concepto
+
+Todo el sitio es monocromo, con el negro y el blanco hueso de la marca. El color aparece **solo en la fotografía**, cuando las imágenes entran en escena o el usuario interactúa con ellas. Es una traducción visual del lema *"we feel what we do"*. La tipografía Aileron Black, la de la marca, funciona como elemento gráfico principal.
+
+## Stack
+
+| | |
+|---|---|
+| Framework | **Next.js 16** (App Router, Cache Components, Turbopack) + **React 19** + TypeScript |
+| Estilos | **Tailwind CSS v4** con tokens de marca (`@theme`) |
+| Animación | **GSAP 3** + ScrollTrigger (scroll), **Motion** (UI/estados), **Lenis** (smooth scroll) |
+| Validación | **Zod 4**, el mismo esquema en cliente y servidor |
+| Fuentes | Aileron 700/900 (local, woff2) + Montserrat (`next/font`) |
+| Deploy | Vercel |
+
+## Qué incluye
+
+- **Home**: intro animada, hero con fotos en parallax y el titular "~~instinto~~", manifiesto que se ilumina mientras se lee, método en 3 pilares, índice de servicios filtrable con preview que sigue al cursor, grilla de clientes con spotlight, contadores, Instagram y contacto.
+- **11 páginas de servicio** (`/servicios/[slug]`), generadas estáticamente, cada una con su metadata y su OG image dinámica.
+- **Diagnóstico de marca** (`/diagnostico`): 3 preguntas que recomiendan servicios y arman un mensaje de WhatsApp precargado con el resumen. Sirve para generar leads calificados.
+- **API de contacto** (`/api/contact`): valida con Zod, filtra spam con honeypot y reenvía al Formspree que la agencia ya usa. No hace falta base de datos.
+- **Menú mobile** a pantalla completa y accesible (focus, Escape, scroll lock). En el sitio anterior el menú no funcionaba.
+- **Sin carrusel ni ticker infinitos.**
+- SEO: metadata, Open Graph, `sitemap.xml`, `robots.txt` y JSON-LD `MarketingAgency`.
+- Accesibilidad: `prefers-reduced-motion` respetado, foco visible, skip link, labels y estados ARIA.
+
+## Desarrollo
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
+npm run build && npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Variables de entorno (opcionales)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Variable | Default | Uso |
+|---|---|---|
+| `FORMSPREE_ENDPOINT` | `https://formspree.io/f/xwvrqbek` | Destino de los mensajes del formulario |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Editar contenido
 
-## Learn More
+Todo el contenido vive en `src/lib/content.ts`: servicios, pilares, clientes, estadísticas y datos de contacto. Las preguntas y la lógica del diagnóstico están en `src/lib/diagnostic.ts`.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Diseño y desarrollo: Andrés Listorti.
