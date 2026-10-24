@@ -5,7 +5,7 @@ import { SITE } from "./content";
 // Así las vistas previas de WhatsApp funcionan hoy en *.vercel.app y,
 // cuando se conecte vibaagency.com en Vercel, pasan a usarlo sin tocar código.
 function resolve() {
-  const explicit = process.env.NEXT_PUBLIC_SITE_URL;
+  const explicit = process.env.SITE_URL;
   if (explicit) return explicit.replace(/\/$/, "");
   const vercel = process.env.VERCEL_PROJECT_PRODUCTION_URL;
   if (vercel) return `https://${vercel}`;

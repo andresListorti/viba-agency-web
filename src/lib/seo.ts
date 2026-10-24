@@ -8,7 +8,8 @@ export const DEFAULT_DESCRIPTION =
 
 // Imágenes estáticas generadas con scripts/generate-og.py (JPG < 100 KB, ideal para WhatsApp)
 const image = (name: string, alt: string) => ({
-  url: `/og/${name}.jpg`,
+  url: absolute(`/og/${name}.jpg`),
+  secureUrl: absolute(`/og/${name}.jpg`),
   width: 1200,
   height: 630,
   type: "image/jpeg",

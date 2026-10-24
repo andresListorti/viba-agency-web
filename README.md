@@ -45,9 +45,9 @@ npm run build && npm start
 | Variable | Default | Uso |
 |---|---|---|
 | `FORMSPREE_ENDPOINT` | `https://formspree.io/f/xwvrqbek` | Destino de los mensajes del formulario |
-| `NEXT_PUBLIC_SITE_URL` | dominio de producción de Vercel | Dominio público (canonical, Open Graph, sitemap) |
+| `SITE_URL` | dominio de producción de Vercel | Dominio público (canonical, Open Graph, sitemap) |
 
-Si no se define `NEXT_PUBLIC_SITE_URL`, se usa automáticamente el dominio de producción de Vercel. Cuando se conecte `vibaagency.com` al proyecto, las URLs pasan a usarlo sin tocar código.
+Hoy está definida en Vercel como `https://vibaagency.vercel.app`. Cuando se conecte `vibaagency.com`, hay que cambiar esa variable (o borrarla para que se use el dominio de producción de Vercel) y volver a deployar.
 
 ### Imágenes para compartir e íconos
 
